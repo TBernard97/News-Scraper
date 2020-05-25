@@ -1,0 +1,29 @@
+{% extends "basis.html" %}
+
+{% block body %}
+  <h4 style="text-align:center">Offensive Security Latest</h4>
+  <hr class="my-4"/>
+  <table id="proxy-table" class="display table responsvive text-left mt-4" style="width: 100%">
+    <thead>
+      <tr>
+        <th>Titles</th>
+        <th>Links</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in news %}
+        <tr>
+          <td>{{row["title"]}}</td>
+          <td>{{row["link"]}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <hr class="my-4"/>
+  
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#proxy-table').DataTable();
+    });
+  </script>
+{% endblock %}
